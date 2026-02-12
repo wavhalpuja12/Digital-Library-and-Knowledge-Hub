@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="container text-center mt-4">
+<h1>⚙️ Admin Dashboard</h1>
+<p>Manage books and users</p>
+
+<a href="{% url 'add_book' %}" class="btn btn-success">+ Add New Book</a>
+</div>
+
+<div class="container mt-4">
+<table class="table table-bordered">
+<tr>
+<th>Book</th>
+<th>Author</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for book in books %}
+<tr>
+<td>{{ book.title }}</td>
+<td>{{ book.author }}</td>
+
+<td>
+{% if book.is_availible %}
+Available
+{% else %}
+Borrowed
+{% endif %}
+</td>
+
+<td>
+<a href="{% url 'delete_book' book.id %}" class="btn btn-danger">
+Delete
+</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+</body>
+</html>
