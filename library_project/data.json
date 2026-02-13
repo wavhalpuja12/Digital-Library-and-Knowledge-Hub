@@ -1,54 +1,15 @@
 [
 {
-  "model": "library_app.book",
+  "model": "books.book",
   "pk": 1,
   "fields": {
-    "title": "Book 1",
-    "author": "Pranjali",
-    "description": "Bookboon is currently the most comprehensive ebook online publishing company in the world. Readers can download books in PDF format for free.",
-    "image": "books/books1_T0jir6D.jpg",
-    "book_pdf": "pdfs/Django_Fullstack_Website_Workflow_vyoVxNP.pdf",
-    "is_availible": true,
-    "is_premium": false
-  }
-},
-{
-  "model": "library_app.book",
-  "pk": 2,
-  "fields": {
-    "title": "Book 2",
-    "author": "Pooja",
-    "description": "Bookboon provides free and practical ebooks across multiple domains including technology and business.",
-    "image": "books/books2jpg.jpg",
-    "book_pdf": "pdfs/Django_Fullstack_Website_Workflow_pRQuIcm.pdf",
-    "is_availible": true,
-    "is_premium": false
-  }
-},
-{
-  "model": "library_app.book",
-  "pk": 3,
-  "fields": {
-    "title": "Book 3",
-    "author": "Swaraj",
-    "description": "A premium ebook with in-depth explanations and advanced concepts.",
-    "image": "books/book3.jpg",
-    "book_pdf": "pdfs/Django_Fullstack_Website_Workflow_8WD9vvR.pdf",
-    "is_availible": true,
-    "is_premium": true
-  }
-},
-{
-  "model": "library_app.book",
-  "pk": 4,
-  "fields": {
-    "title": "To Kill a Mockingbird",
-    "author": "Harper Lee",
-    "description": "To Kill a Mockingbird (1960) by Harper Lee is a Pulitzer Prize-winning Southern Gothic novel set in 1930s Alabama, exploring racial injustice and the loss of innocence through the eyes of young Scout Finch",
-    "image": "books/Screenshot_2026-02-13_154445.png",
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "description": "ane Eyre (1847) by Charlotte Brontë is a foundational Gothic Bildungsroman detailing the life of an orphaned girl who overcomes a harsh, abusive upbringing to become a principled governess",
+    "image": "books/images.jpg",
     "book_pdf": "",
     "is_availible": true,
-    "is_premium": true
+    "is_premium": false
   }
 }
 ]
