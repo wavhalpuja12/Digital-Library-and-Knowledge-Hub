@@ -20,11 +20,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('home.urls')),
-    path('accounts/', include('accounts.urls')),
-    path('books/', include('books.urls')),
-    path('borrow/', include('borrow.urls')),
-    path('premium/', include('premium.urls')),
+    path('',include('library_app.urls')),
+    path('accounts/', include('accounts.urls'))
 ]
 
 if settings.DEBUG:

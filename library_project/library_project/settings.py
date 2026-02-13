@@ -41,11 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home.apps.HomeConfig',
-    'accounts',
-    'books',
-    'borrow',
-    'premium'
+    'library_app',
+    'accounts'
+    
 ]
 
 MIDDLEWARE = [
