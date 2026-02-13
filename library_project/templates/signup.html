@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,44 +16,53 @@
             justify-content: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         .signup-container {
             max-width: 450px;
             width: 100%;
             padding: 20px;
         }
+
         .card {
             border: none;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             overflow: hidden;
         }
+
         .card-header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 30px;
             text-align: center;
         }
+
         .card-header h4 {
             font-weight: 600;
             letter-spacing: 1px;
         }
+
         .card-body {
             padding: 40px;
         }
+
         .form-label {
             font-weight: 500;
             color: #555;
             margin-bottom: 8px;
         }
+
         .form-control {
             border-radius: 8px;
             padding: 12px 15px;
             border: 1px solid #ddd;
             transition: all 0.3s ease;
         }
+
         .form-control:focus {
             border-color: #667eea;
             box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
         }
+
         .btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border: none;
@@ -62,30 +72,37 @@
             width: 100%;
             transition: transform 0.2s ease;
         }
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
+
         .alert {
             border-radius: 8px;
             border: none;
         }
+
         .login-link {
             text-align: center;
             margin-top: 20px;
             color: #666;
         }
+
         .login-link a {
             color: #667eea;
             text-decoration: none;
             font-weight: 600;
         }
+
         .login-link a:hover {
             text-decoration: underline;
         }
+
         .position-relative {
             position: relative;
         }
+
         .toggle-password {
             top: 38px;
             right: 15px;
@@ -94,6 +111,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="signup-container">
         <div class="card">
@@ -102,12 +120,20 @@
             </div>
             <div class="card-body">
                 {% if messages %}
-                    <div class="alert alert-danger">
-                        {% for message in messages %}
-                            {{ message }}
-                        {% endfor %}
-                    </div>
+                {% for message in messages %}
+                <div class="alert alert-danger">
+                    {{ message }}
+                </div>
+                {% endfor %}
                 {% endif %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+
 
                 <form method="POST">
                     {% csrf_token %}
@@ -156,8 +182,8 @@
     <script>
         // Toggle password visibility
         const togglePassword = document.querySelectorAll('.toggle-password');
-        togglePassword.forEach(function(el) {
-            el.addEventListener('click', function() {
+        togglePassword.forEach(function (el) {
+            el.addEventListener('click', function () {
                 const input = document.querySelector(el.getAttribute('toggle'));
                 const icon = el.querySelector('i');
                 if (input.type === 'password') {
@@ -173,4 +199,5 @@
         });
     </script>
 </body>
+
 </html>

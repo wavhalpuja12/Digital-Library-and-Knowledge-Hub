@@ -82,10 +82,14 @@ WSGI_APPLICATION = 'library_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
+DATABASES = DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'digital_library_db',
+        'USER': 'root',
+        'PASSWORD': 'pran@253',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 

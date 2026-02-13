@@ -7,6 +7,7 @@ from .models import Book, BorrowRecord, Premium
 from django.db.models import Count
 
 
+
 # ---------- HOME (SHOW ALL BOOKS WITHOUT LOGIN) ----------
 def home(request):
     query = request.GET.get('q')
@@ -163,6 +164,7 @@ def delete_book(request, book_id):
 
 
 # ---------- SIGNUP ----------
+
 def signup_view(request):
 
     if request.method == "POST":
@@ -171,18 +173,22 @@ def signup_view(request):
         password = request.POST['password']
         password2 = request.POST['password2']
 
+        # Username check
         if User.objects.filter(username=username).exists():
             messages.error(request, "Username already taken.")
             return render(request, 'signup.html')
 
+        # Email check
         if User.objects.filter(email=email).exists():
             messages.error(request, "Email already registered.")
             return render(request, 'signup.html')
 
+        # Password match check
         if password != password2:
             messages.error(request, "Passwords do not match.")
             return render(request, 'signup.html')
 
+        # Create user
         User.objects.create_user(
             username=username,
             email=email,
