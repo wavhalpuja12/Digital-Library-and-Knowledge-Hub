@@ -21,10 +21,3 @@ class BorrowRecord(models.Model):
     def __str__(self):
         return f"{self.user.username} borrowed {self.book.title}"
     
-class Premium(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    purchased_date = models.DateField(auto_now_add=True)
-    expiry_date = models.DateField()
-
-    def is_active(self):
-        return self.expiry_date >= date.today()
