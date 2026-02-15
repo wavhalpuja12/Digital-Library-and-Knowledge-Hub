@@ -62,7 +62,7 @@ def login_view(request):
             if user.is_superuser:
                 return redirect('admin_dashboard')
 
-            return redirect('login')
+            return redirect('home')
 
         else:
             messages.error(request, "Invalid username or password.")
@@ -77,3 +77,6 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+
+

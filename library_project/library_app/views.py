@@ -8,7 +8,7 @@ from django.db.models import Count
 
 
 # ---------- HOME (SHOW ALL BOOKS WITHOUT LOGIN) ----------
-def home(request):
+def user_home(request):
     query = request.GET.get('q')
 
     if query:
@@ -24,7 +24,7 @@ def home(request):
         context['total_books'] = Book.objects.count()
         context['total_records'] = BorrowRecord.objects.count()
 
-    return render(request, 'home.html', context)
+    return render(request, 'user_home.html', context)
 
 
 # ---------- BORROW BOOK ----------
@@ -186,5 +186,9 @@ def activate_premium(request):
 
     messages.success(request, "🎉 Premium Activated Successfully!")
     return redirect('home')
+
+
+def categories(request):
+    return render(request, 'categories.html')
 
 

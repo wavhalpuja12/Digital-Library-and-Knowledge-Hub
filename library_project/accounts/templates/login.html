@@ -1,164 +1,94 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .login-container {
-            max-width: 450px;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-
-        .card-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 30px;
-            text-align: center;
-        }
-
-        .card-header h4 {
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .card-body {
-            padding: 40px;
-        }
-
-        .form-label {
-            font-weight: 500;
-            color: #555;
-            margin-bottom: 8px;
-        }
-
-        .form-control {
-            border-radius: 8px;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            width: 100%;
-            transition: transform 0.2s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .alert {
-            border-radius: 8px;
-            border: none;
-        }
-
-        .signup-link {
-            text-align: center;
-            margin-top: 20px;
-            color: #666;
-        }
-
-        .signup-link a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .signup-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>login page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<style>
+    body {
+        background-image: url("{% static 'images/books_library.jpeg' %}");
+
+
+    }
+
+    #div1 {
+        margin: auto;
+        margin-top: 200px;
+        width: 350px;
+        height: 350px;
+        border-radius: 40px;
+        border: solid 2px black;
+        text-align: center;
+        box-shadow: 2px 4px 8px black;
+        background-color: rgba(255, 255, 255, 0.675);
+    }
+
+    .log {
+        font-size: 20px;
+        text-align: start;
+        margin-left: 20px;
+        color: black;
+
+
+    }
+
+    .btn-login {
+        background-color: #0b4edf;
+        border-color: #000000;
+        border-radius: 10px;
+        color: #111;
+        margin-top: 15px;
+        width: 100px;
+        height: 35px;
+
+    }
+
+
+    .btn-alogin:hover {
+        background-color: #3018e0;
+        border-color: #a88734;
+    }
+
+    .form-control {
+        width: 300px;
+        height: 30px;
+        border-radius: 10px;
+    }
+</style>
 
 <body>
-    <div class="login-container">
-        <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h4 class="mb-0">Login</h4>
-            </div>
-            <div class="card-body">
-                {% if messages %}
-                {% for message in messages %}
-                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                </div>
-                {% endfor %}
-                {% endif %}
 
+    <div id="div1">
+        <form action="">
+            <div style="margin: 15px;">
+                <i class="fa-regular fa-circle-user"></i>
+                <!-- <img src="user_icon.svg" alt=" " style="width: 125px; height: 125px;"> -->
 
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" required>
-                    </div>
-                    <div class="mb-3 position-relative">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
-                        <span toggle="#password" class="toggle-password position-absolute">
-                            <i class="fas fa-eye"></i>
-                        </span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </form>
-                <div class="signup-link">
-                    <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
-                </div>
             </div>
-        </div>
+            <div class="log">
+                <label class="form-label fw-semibold" for="un">User Name</label><br>
+                <input type="text" id="un" class="form-control" name="username" placeholder="username" required>
+            </div>
+            <br>
+            <div class="log">
+                <label class="form-label fw-semibold" for="pass">Password</label><br>
+                <input type="password" id="pass" class="form-control" placeholder="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-login w-100 mb-3">
+                Login
+            </button>
+            <div class="signup-link mb-1">
+                Create New account? <a href="{% url 'signup' %}">Register</a>
+            </div>
+        </form>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Toggle password visibility
-        const togglePassword = document.querySelectorAll('.toggle-password');
-        togglePassword.forEach(function (el) {
-            el.addEventListener('click', function () {
-                const input = document.querySelector(el.getAttribute('toggle'));
-                const icon = el.querySelector('i');
-                if (input.type === 'password') {
-                    input.type = 'text';
-                    icon.classList.remove('fa-eye');
-                    icon.classList.add('fa-eye-slash');
-                } else {
-                    input.type = 'password';
-                    icon.classList.remove('fa-eye-slash');
-                    icon.classList.add('fa-eye');
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
